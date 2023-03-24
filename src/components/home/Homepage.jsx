@@ -1,55 +1,9 @@
-import React, { useState } from "react";
-import "./homepage.css";
+ import "./homepage.css";
 
-const Homepage = () => {
-  const [vehical, set_vehical] = useState("");
-  const [selected_vehicle, set_selected_vehicle] = useState("");
-  const vehicles = ["Car", "Bike"];
-  const carsBrand = [
-    {
-      brand: "Tata",
-      img: require("../../images/tata.png"),
-      name: "Tiago",
-    },
-    {
-      brand: "Mercedes",
-      img: require("../../images/mercedes.png"),
-      name: "Tiago",
-    },
-    {
-      brand: "Suzuki",
-      img: require("../../images/suzuki.png"),
-      name: "Tiago",
-    },
-    {
-      brand: "Mahindra",
-      img: require("../../images/mahindra.png"),
-      name: "Tiago",
-    },
-  ];
-  // const carsBrand = ["Tata","Mercedes","Maruti Suzuki","Mahindra"];
-  const BikesBrand = [
-    {
-      brand: "BMW",
-      img: require("../../images/bmw.png"),
-      name: "Tiago",
-    },
-    {
-      brand: "Yamaha",
-      img: require("../../images/yamaha.png"),
-      name: "Tiago",
-    },
-    {
-      brand: "Honda",
-      img: require("../../images/honda.png"),
-      name: "Tiago",
-    },
-    {
-      brand: "Bajaj",
-      img: require("../../images/bajaj.png"),
-      name: "Tiago",
-    },
-  ];
+const Homepage = (props) => {
+
+  const {carsBrand,BikesBrand,vehicles,vehical,selected_vehicle,set_selected_vehicle,set_vehical}=props
+ 
 
   const setVeh = (data) => {
     set_vehical(data);
