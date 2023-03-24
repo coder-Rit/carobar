@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  transition: all 1s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+ 
+  font-size: 1.2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.green {
+  color: var(--green);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.white {
+  color: var(--white);
+font-size: .8em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+a.active {
+  color: var(--anchor-active-color);
+  font-weight: var(--anchor-active-font-weight);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+header {
+align-items: center;
   display: flex;
-  flex-direction: column;
+  background-color: var(--header-background);
+ justify-content: space-between;  
+  padding: 1em 0;
+
+}
+
+.section {
+  flex-grow: 1;
+}
+
+.section.logo {
+  margin-left: 2.5em;
+}
+
+.logo {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 500px;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ul li {
+  flex-grow: 1;
+  text-align: center;
+  width: 70px;
+}
+
+ul li a {
+  color: var(--anchor-color);
+  font-size: .9rem;
+  text-transform: uppercase;
+}
+
+header div:nth-child(1) {
+  flex-grow: 8;
+}
+
+ 
+
+.box-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media all and (max-width: 800px) {
+  header {
+      justify-content: space-around;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container {
+      padding: 50px;
   }
 }
+
+@media only screen and (max-width:542px) {
+  header div:nth-child(1) {
+      margin: 0 auto;
+      display: block;
+      padding-bottom: 0;
+  }
+
+  header {
+      flex-direction: column;
+  }
+
+  .section {
+      flex-grow: 1;
+      text-align: center;
+  }
+
+  .section.logo {
+      margin: 0;
+  }
+
+  ul {
+      background-color: #232323;
+      width: 100%;
+      margin-top: 15px;
+  }
+
+  ul li {
+      width: 50%;
+      padding: 5px;
+  }
+}
+
+.break{
+  height: 25px;
+  width: 25px;
+  margin: 0;
+}
+
+ 
