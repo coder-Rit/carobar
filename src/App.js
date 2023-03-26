@@ -2,6 +2,9 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Homepage from "./components/home/Homepage";
 import Service from "./components/serviceCart/Service";
+import Qna from "./components/QNA/Qna";
+import About from "./components/about/About";
+import Footer from "./components/footer/Footer";
 import React, { useState } from "react";
 
 function App() {
@@ -56,6 +59,7 @@ function App() {
 
   return (
     <div className="App">
+       
       <Navbar></Navbar>
       <Homepage
         set_vehical={set_vehical}
@@ -67,6 +71,9 @@ function App() {
         carsBrand={carsBrand}
       ></Homepage>
       <Service></Service>
+      <About></About>
+      <Qna></Qna>
+      <Footer></Footer>
     </div>
   );
 }

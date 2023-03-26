@@ -1,7 +1,8 @@
- import "./homepage.css";
+ import { useState } from "react";
+import "./homepage.css";
 
 const Homepage = (props) => {
-
+const [chooseVehcil, set_chooseVehcil] = useState(false)
   const {carsBrand,BikesBrand,vehicles,vehical,selected_vehicle,set_selected_vehicle,set_vehical}=props
  
 
@@ -15,16 +16,20 @@ const Homepage = (props) => {
 
   return (
     <div>
-      <div className="div864564 ">
-        <img src={require("../../images/backgroundImg.jpg")} alt="" />
-        <div className="div486596 blur">
-          <h3>Choose your vehicle</h3>
-          <div className="div544464">
+      <div className="div864564 " id="home">
+        <img src={require("../../images/backgroundImg.png")} className="img7654" alt="" />
+        <div className="div486596      ">
+<h1>Select best service for your vehicle</h1>
+          <button onClick={()=>set_chooseVehcil(!chooseVehcil)} className="btn5646 bolt">Choose your vehicle ▼</button>
+         
+          {chooseVehcil?(
+            <>
+             {/* <div>Select your {vehical === "Car" ? "Car" : "Bike"}</div> */}
+             <div className="div544464">
             {vehicles.map((data) => {
               return <span onClick={() => setVeh(data)}>{data}</span>;
             })}
           </div>
-          <div>Select your {vehical === "Car" ? "Car" : "Bike"}</div>
           <div className="div544464">
             {vehical === "Car"
               ? carsBrand.map((data) => {
@@ -54,7 +59,13 @@ const Homepage = (props) => {
                 })
               : null}
           </div>
+            </>
+          ):null
+
+          }
+         
           <div className="div544464 columDown">
+            <a href="#myservices">
             {selected_vehicle === "Tata" ? (
               <>
               <img
@@ -64,7 +75,7 @@ const Homepage = (props) => {
                 width="140px"
                 alt=""
                 />
-      <p>Tiago</p>
+      <p >Tiago</p>
                 </>
             ) : selected_vehicle === "Suzuki" ? (
               <>
@@ -147,8 +158,12 @@ const Homepage = (props) => {
                  <p>Pulsar</p>
                 </>
             ) : null}
+            </a>
           </div>
         </div>
+      </div>
+      <div  id="serivese">
+
       </div>
     </div>
   );
